@@ -18,17 +18,17 @@ def makeUnique(dest, name):
     filename, extension = os.path.splitext(name)
     counter = 1
     # if file exists, adds number to the end of the filename
-    while os.path.exists(f"{dest}/{name}"):
+    while os.path.exists(os.path.join(dest, name)):
         name = f"{filename}({str(counter)}){extension}"
         counter += 1
     return name
 
 def move_file(dest, entry, name):
-    if os.path.exists(f"{dest}/{name}"):
-        unique_name = makeUnique(name)
+    if os.path.exists(os.path.join(dest, name)):
+        unique_name = makeUnique(dest, name)
         oldName = os.path.join(dest, name)
         newName = os.path.join(dest, unique_name)
-        os.scandir.rename(oldName, newName)
+        os.rename(oldName, newName)
     move(entry, dest)
     
 class MoverHandler(FileSystemEventHandler):
