@@ -67,12 +67,15 @@ class MoverHandler(FileSystemEventHandler):
                 elif name.endswith('.pptx'):
                     dest = dest_dir_powerPoints
                     move_file(dest, entry, name)
+                    logging.info(f"Moved power point file: {name}")
                 elif name.endswith('.docx'):
                     dest = dest_dir_wordDocuments
                     move_file(dest, entry, name)
+                    logging.info(f"Moved word document: {name}")
                 elif name.endswith('.pdf'):
                     dest = dest_dir_PDF
                     move_file(dest, entry, name)
+                    logging.info(f"Moved PDF file: {name}")
 
 if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO,
