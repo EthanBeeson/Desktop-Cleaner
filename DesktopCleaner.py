@@ -13,6 +13,9 @@ dest_dir_video = "C:\\Users\\jamie\\Videos"
 dest_dir_image = "C:\\Users\\jamie\\Pictures\\Camera Roll"
 dest_dir_camScanner = "C:\\Users\\jamie\\Pictures\\CamScanner"
 dest_dir_installer = "C:\\Users\\jamie\\Documents\\Installers"
+dest_dir_wordDocuments = "C:\\Users\\jamie\\Documents\\Word Documents"
+dest_dir_PDF = "C:\\Users\\jamie\\Documents\\PDFs"
+dest_dir_powerPoints = "C:\\Users\\jamie\\Documents\\Power Points"
 
 def makeUnique(dest, name):
     filename, extension = os.path.splitext(name)
@@ -61,6 +64,15 @@ class MoverHandler(FileSystemEventHandler):
                     dest = dest_dir_camScanner
                     move_file(dest, entry, name)
                     logging.info(f"Moved CamScanner file: {name}")
+                elif name.endswith('.pptx')
+                    dest = dest_dir_powerPoints
+                    move_file(dest, entry, name)
+                elif name.endswith('.docx')
+                    dest = dest_dir_wordDocuments
+                    move_file(dest, entry, name)
+                elif name.endswith('.pdf')
+                    dest = dest_dir_PDF
+                    move_file(dest, entry, name)
 
 if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO,
