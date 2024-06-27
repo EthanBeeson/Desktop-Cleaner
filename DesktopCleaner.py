@@ -64,13 +64,13 @@ class MoverHandler(FileSystemEventHandler):
                     dest = dest_dir_camScanner
                     move_file(dest, entry, name)
                     logging.info(f"Moved CamScanner file: {name}")
-                elif name.endswith('.pptx')
+                elif name.endswith('.pptx'):
                     dest = dest_dir_powerPoints
                     move_file(dest, entry, name)
-                elif name.endswith('.docx')
+                elif name.endswith('.docx'):
                     dest = dest_dir_wordDocuments
                     move_file(dest, entry, name)
-                elif name.endswith('.pdf')
+                elif name.endswith('.pdf'):
                     dest = dest_dir_PDF
                     move_file(dest, entry, name)
 
